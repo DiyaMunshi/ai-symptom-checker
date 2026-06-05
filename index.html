@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SymptomAI - AI Symptom Checker</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+body{
+    font-family:'Inter',sans-serif;
+}
+</style>
+
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+<!-- NAVBAR -->
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+        <h1 class="text-3xl font-bold text-emerald-600">
+            SymptomAI
+        </h1>
+
+        <ul class="hidden md:flex gap-8 font-medium">
+
+            <li>
+                <a href="#home" class="hover:text-emerald-600">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#features" class="hover:text-emerald-600">
+                    Features
+                </a>
+            </li>
+
+            <li>
+                <a href="#how" class="hover:text-emerald-600">
+                    How It Works
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact" class="hover:text-emerald-600">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<!-- HERO SECTION -->
+
+<section id="home" class="bg-emerald-50">
+
+    <div class="max-w-7xl mx-auto px-6 py-20">
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+            <!-- LEFT -->
+
+            <div>
+
+                <span class="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium">
+                    AI Powered Healthcare
+                </span>
+
+                <h1 class="text-5xl md:text-6xl font-extrabold mt-6 leading-tight">
+
+                    Check Your Symptoms
+                    <span class="text-emerald-600">
+                        Smarter
+                    </span>
+
+                </h1>
+
+                <p class="mt-6 text-lg text-slate-600">
+
+                    Analyze symptoms, assess health risks,
+                    and receive healthcare guidance instantly
+                    using Artificial Intelligence.
+
+                </p>
+
+                <div class="mt-8 flex gap-4">
+
+                    <button class="bg-emerald-600 text-white px-6 py-3 rounded-xl hover:bg-emerald-700 transition">
+
+                        Get Started
+
+                    </button>
+
+                    <button class="border border-emerald-600 text-emerald-600 px-6 py-3 rounded-xl hover:bg-emerald-600 hover:text-white transition">
+
+                        Learn More
+
+                    </button>
+
+                </div>
+
+                <div class="mt-6 space-y-2 text-slate-700">
+                     <p class="flex items-center gap-2">
+                         ✓ Instant Symptom Analysis
+                     </p>
+                     <p class="flex items-center gap-2">
+                        ✓ AI-Powered Risk Assessment
+                    </p>
+                    <p class="flex items-center gap-2">
+                        ✓ Personalized Healthcare Guidance
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div>
+
+                <img
+                src="images/doctor.svg"
+                alt="Healthcare Illustration"
+                class="w-full max-w-md mx-auto">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="py-12 bg-white">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <div class="bg-emerald-50 rounded-3xl p-8 text-center">
+
+                <h2 class="text-4xl font-bold text-emerald-600">
+                    10K+
+                </h2>
+
+                <p class="mt-2">
+                    Health Assessments
+                </p>
+
+            </div>
+
+            <div class="bg-emerald-50 rounded-3xl p-8 text-center">
+
+                <h2 class="text-4xl font-bold text-emerald-600">
+                    95%
+                </h2>
+
+                <p class="mt-2">
+                    Prediction Accuracy
+                </p>
+
+            </div>
+
+            <div class="bg-emerald-50 rounded-3xl p-8 text-center">
+
+                <h2 class="text-4xl font-bold text-emerald-600">
+                    24/7
+                </h2>
+
+                <p class="mt-2">
+                    Availability
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section id="features" class="py-16">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="text-4xl font-bold text-center mb-12">
+            Our Features
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-xl hover:-translate-y-2 transition">
+
+                <div class="text-4xl mb-4"><img src="images/analysis.svg" class="w-20 h-20 mx-auto mb-4"></div>
+
+                <h3 class="text-xl font-bold mb-3">
+                    AI Analysis
+                </h3>
+
+                <p class="text-slate-600">
+                    Analyze symptoms using intelligent prediction models and healthcare insights.
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-xl hover:-translate-y-2 transition">
+
+                <div class="text-4xl mb-4"><img src="images/risk.svg" class="w-20 h-20 mx-auto mb-4"></div>
+
+                <h3 class="text-xl font-bold mb-3">
+                    Risk Assessment
+                </h3>
+
+                <p class="text-slate-600">
+                    Assess potential health risks and understand symptom severity instantly.
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-xl hover:-translate-y-2 transition">
+
+                <div class="text-4xl mb-4"><img src="images/first-aid.svg" class="w-20 h-20 mx-auto mb-4"></div>
+
+                <h3 class="text-xl font-bold mb-3">
+                    First Aid Guide
+                </h3>
+
+                <p class="text-slate-600">
+                    Receive immediate first-aid recommendations for common health conditions.
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-xl hover:-translate-y-2 transition">
+
+                <div class="text-4xl mb-4"><img src="images/doctor1.svg" class="w-20 h-20 mx-auto mb-4"></div>
+
+                <h3 class="text-xl font-bold mb-3">
+                    Doctor Suggestions
+                </h3>
+
+                <p class="text-slate-600">
+                   Get recommendations for the right specialist based on your symptoms.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section id="how" class="bg-white py-20">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <h2 class="text-4xl font-bold text-center mb-12">
+            How It Works
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+
+            <div>
+
+                <div class="w-16 h-16 bg-emerald-600 text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">
+                    1
+                </div>
+
+                <h3 class="mt-4 font-semibold text-lg">
+                    Enter Symptoms
+                </h3>
+                <p class="mt-2 text-slate-600">
+                    Input your symptoms in natural language for analysis.
+                </p>
+
+            </div>
+
+            <div>
+
+                <div class="w-16 h-16 bg-emerald-600 text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">
+                    2
+                </div>
+
+                <h3 class="mt-4 font-semibold text-lg">
+                    AI Analysis
+                </h3>
+                <p class="mt-2 text-slate-600">
+                    AI evaluates symptoms and identifies possible conditions.
+                </p>
+
+            </div>
+
+            <div>
+
+                <div class="w-16 h-16 bg-emerald-600 text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">
+                    3
+                </div>
+
+                <h3 class="mt-4 font-semibold text-lg">
+                    View Results
+                </h3>
+                <p class="mt-2 text-slate-600">
+                    View risk assessment and healthcare recommendations.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DEMO SECTION -->
+
+<section class="py-16">
+
+    <div class="max-w-4xl mx-auto px-6">
+
+        <h2 class="text-4xl font-bold text-center mb-12">
+            Sample Symptom Analysis
+        </h2>
+
+        <div class="bg-white rounded-3xl shadow-lg p-8">
+
+            <h3 class="text-2xl font-bold mb-6">
+                Symptoms Detected
+            </h3>
+
+            <div class="space-y-3">
+
+                <div class="bg-slate-100 p-4 rounded-xl">
+                    ✓ Fever
+                </div>
+
+                <div class="bg-slate-100 p-4 rounded-xl">
+                    ✓ Headache
+                </div>
+
+                <div class="bg-slate-100 p-4 rounded-xl">
+                    ✓ Fatigue
+                </div>
+
+            </div>
+
+            <div class="mt-6 bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+
+                <p class="text-slate-500">
+                    Possible Condition
+                </p>
+
+                <h4 class="font-bold text-emerald-700">
+                    Viral Infection
+                </h4>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="py-12">
+  <div class="max-w-4xl mx-auto bg-emerald-600 text-white rounded-3xl p-10 text-center">
+      <h2 class="text-3xl font-bold">
+          Ready to Check Your Symptoms?
+      </h2>
+
+      <p class="mt-3">
+          Get AI-powered healthcare insights in seconds.
+      </p>
+
+      <button class="mt-6 bg-white text-emerald-600 px-8 py-4 rounded-xl font-semibold">
+          Start Assessment
+      </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact" class="bg-slate-900 text-white py-10">
+
+    <div class="max-w-7xl mx-auto px-6 text-center">
+
+        <h2 class="text-2xl font-bold text-emerald-400">
+            SymptomAI
+        </h2>
+
+        <p class="mt-3 text-slate-400">
+            AI Based Symptom Checker & Healthcare Assistant
+        </p>
+
+        <p class="mt-4 text-slate-500">
+            © 2026 SymptomAI. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
