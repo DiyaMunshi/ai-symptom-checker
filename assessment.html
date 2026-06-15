@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SymptomAI Assessment</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    body{
+        font-family:'Inter',sans-serif;
+    }
+
+    .spinner{
+        border:6px solid #d1fae5;
+        border-top:6px solid #059669;
+        border-radius:50%;
+        width:60px;
+        height:60px;
+        animation:spin 1s linear infinite;
+    }
+
+    @keyframes spin{
+        from {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
+    }
+
+</style>
+
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+<!-- HEADER -->
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+        <h1 class="text-3xl font-bold text-emerald-600">
+            SymptomAI
+        </h1>
+
+        <a href="index.html"
+        class="bg-emerald-600 text-white px-5 py-2 rounded-xl hover:bg-emerald-700 transition">
+
+            ← Back to Home
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="bg-emerald-50 py-14">
+
+    <div class="max-w-5xl mx-auto px-6 text-center">
+
+        <span class="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium">
+
+            AI Powered Assessment
+
+        </span>
+
+        <h1 class="text-5xl font-extrabold mt-6">
+
+            Health Assessment
+
+        </h1>
+
+        <p class="mt-4 text-lg text-slate-600">
+
+            Enter your symptoms to receive an AI-assisted assessment and recommendations.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ASSESSMENT FORM -->
+
+<section class="py-16">
+
+    <div class="max-w-5xl mx-auto px-6">
+
+        <div class="bg-white rounded-3xl shadow-lg p-8 space-y-8">
+
+            <h2 class="text-3xl font-bold">
+
+                Patient Information
+
+            </h2>
+
+
+            <!-- NAME -->
+
+            <div>
+
+                <label class="font-medium">
+
+                    Full Name
+
+                </label>
+
+                <input
+                type="text"
+                id="patientName"
+                placeholder="Enter your full name"
+                class="w-full border p-3 rounded-xl mt-2">
+
+            </div>
+
+
+            <!-- AGE -->
+
+            <div>
+
+                <label class="font-medium">
+
+                    Age
+
+                </label>
+
+                <input
+                type="number"
+                id="patientAge"
+                placeholder="Enter your age"
+                class="w-full border p-3 rounded-xl mt-2">
+
+            </div>
+
+
+            <!-- GENDER -->
+
+            <div>
+
+                <label class="font-medium">
+
+                    Gender
+
+                </label>
+
+                <select
+                id="patientGender"
+                class="w-full border p-3 rounded-xl mt-2">
+
+                    <option value="">
+                        Select Gender
+                    </option>
+
+                    <option>
+                        Female
+                    </option>
+
+                    <option>
+                        Male
+                    </option>
+
+                    <option>
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- SYMPTOMS -->
+
+            <div>
+
+                <label class="font-medium">
+
+                    Describe Your Symptoms
+
+                </label>
+
+                <textarea
+                id="symptoms"
+                rows="5"
+                placeholder="Example: fever, headache, cough..."
+                class="w-full border p-3 rounded-xl mt-2"></textarea>
+
+            </div>
+
+            <!-- FILE API -->
+
+            <div>
+
+                <label class="font-medium">
+
+                    Upload Medical Report (Optional)
+
+                </label>
+
+                <input
+                type="file"
+                id="medicalReport"
+                class="block mt-3">
+
+                <p
+                id="uploadedFile"
+                class="mt-2 text-slate-500">
+
+                    No file selected.
+
+                </p>
+
+            </div>
+
+
+            <!-- GENERATE BUTTON -->
+
+            <button
+            onclick="generateAssessment()"
+            class="w-full bg-emerald-600 text-white py-4 rounded-xl font-semibold hover:bg-emerald-700 transition">
+
+                ✨ Generate AI Assessment
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- AI LOADING -->
+
+<section
+id="loadingSection"
+class="hidden py-12">
+
+    <div class="text-center">
+
+        <div class="spinner mx-auto"></div>
+
+        <h2 class="mt-6 text-2xl font-bold">
+
+            Analyzing Symptoms...
+
+        </h2>
+
+        <div class="mt-4 text-slate-600 space-y-2">
+
+            <p>
+                ✔ Cross-referencing symptom database
+            </p>
+
+            <p>
+                ✔ Evaluating severity patterns
+            </p>
+
+            <p>
+                ✔ Generating recommendations
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RESULT CARD -->
+
+<section
+id="resultSection"
+class="hidden py-12">
+
+    <div class="max-w-5xl mx-auto px-6">
+
+        <div class="bg-white rounded-3xl shadow-lg p-8">
+
+            <div class="flex justify-between items-start flex-wrap gap-4">
+
+                <div>
+
+                    <h2 class="text-3xl font-bold">
+
+                        AI Assessment Result
+
+                    </h2>
+
+                    <p
+                    id="assessmentTime"
+                    class="text-slate-500 mt-2">
+
+                    </p>
+
+                </div>
+
+                <span
+                id="severity"
+                class="px-4 py-2 rounded-full font-semibold">
+
+                </span>
+
+            </div>
+
+            <div class="mt-8 space-y-6">
+
+                <div>
+
+                    <p class="text-slate-500">
+
+                        Possible Condition
+
+                    </p>
+
+                    <h3
+                    id="condition"
+                    class="text-2xl font-bold text-emerald-700">
+
+                    </h3>
+
+                </div>
+
+                <div>
+
+                    <p class="text-slate-500">
+
+                        Recommendation
+
+                    </p>
+
+                    <p
+                    id="recommendation"
+                    class="font-medium text-lg">
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <p class="text-slate-500">
+
+                        Confidence Score
+
+                    </p>
+
+                    <div class="w-full bg-slate-200 rounded-full h-4 mt-2">
+
+                        <div
+                        id="confidenceBar"
+                        class="bg-emerald-600 h-4 rounded-full"
+                        style="width:0%">
+
+                        </div>
+
+                    </div>
+
+                    <p
+                    id="confidenceText"
+                    class="mt-2 font-medium">
+
+                    </p>
+
+                </div>
+                <!-- ACTION BUTTONS -->
+
+                <div class="flex flex-wrap gap-4 pt-4">
+
+                    <button onclick="saveAssessment()"
+                    class="bg-emerald-600 text-white px-6 py-3 rounded-xl hover:bg-emerald-700">
+
+                        💾 Save Assessment
+
+                    </button>
+
+                    <button onclick="copySummary()"
+                    class="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700">
+
+                        📋 Copy Summary
+
+                    </button>
+
+                    <button onclick="findNearbyHospitals()"
+                    class="bg-red-600 text-white px-6 py-3 rounded-xl hover:bg-red-700">
+
+                        📍 Find Nearby Hospitals
+
+                    </button>
+
+                </div>
+
+                <p id="saveMessage"
+                class="mt-4 text-emerald-600 font-medium">
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HOSPITAL MAP -->
+
+<section id="mapSection"
+class="hidden py-12">
+
+    <div class="max-w-5xl mx-auto px-6">
+
+        <div class="bg-white rounded-3xl shadow-lg p-8">
+
+            <h2 class="text-2xl font-bold mb-6">
+
+                Nearby Hospitals
+
+            </h2>
+
+            <iframe
+            id="hospitalMap"
+            class="w-full rounded-2xl"
+            height="400"
+            loading="lazy">
+
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="py-12">
+
+    <div class="max-w-5xl mx-auto px-6">
+
+        <div class="bg-white rounded-3xl shadow-lg p-8">
+
+            <h2 class="text-2xl font-bold mb-6">
+
+                Assessment History
+
+            </h2>
+
+            <div id="historyContainer"
+                 class="space-y-4">
+
+                <p class="text-slate-500">
+
+                    No previous assessments found.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+let currentAssessment = {};
+let uploadedFileName = "";
+
+
+/* FILE API */
+
+document.getElementById("medicalReport")
+.addEventListener("change", function(){
+
+    if(this.files.length > 0){
+
+        uploadedFileName = this.files[0].name;
+
+        document.getElementById("uploadedFile")
+        .innerText =
+            "Uploaded: " + uploadedFileName;
+    }
+
+});
+
+/* AI ASSESSMENT */
+
+function generateAssessment(){
+
+    const name =
+        document.getElementById("patientName").value;
+
+    const age =
+        document.getElementById("patientAge").value;
+
+    const gender =
+        document.getElementById("patientGender").value;
+
+    const symptoms =
+        document.getElementById("symptoms")
+        .value.toLowerCase();
+
+
+    if(!name || !age || !gender || !symptoms){
+
+        alert("Please complete all required fields.");
+
+        return;
+    }
+
+
+    document.getElementById("loadingSection")
+    .classList.remove("hidden");
+
+
+    setTimeout(()=>{
+
+        document.getElementById("loadingSection")
+        .classList.add("hidden");
+
+        document.getElementById("resultSection")
+        .classList.remove("hidden");
+
+
+        let condition;
+        let severity;
+        let confidence;
+        let recommendation;
+
+
+        if(
+            symptoms.includes("chest pain") ||
+            symptoms.includes("shortness of breath")
+        ){
+
+            condition =
+                "Possible Cardiac Emergency";
+
+            severity =
+                "High";
+
+            confidence =
+                96;
+
+            recommendation =
+                "Seek immediate medical attention.";
+
+        }
+
+        else if(
+            symptoms.includes("fever") ||
+            symptoms.includes("headache") ||
+            symptoms.includes("fatigue")
+        ){
+
+            condition =
+                "Possible Viral Infection";
+
+            severity =
+                "Moderate";
+
+            confidence =
+                87;
+
+            recommendation =
+                "Monitor symptoms and consult a physician if symptoms persist.";
+
+        }
+
+        else if(
+            symptoms.includes("cough") ||
+            symptoms.includes("sneezing")
+        ){
+
+            condition =
+                "Common Cold";
+
+            severity =
+                "Low";
+
+            confidence =
+                82;
+
+            recommendation =
+                "Rest, stay hydrated, and monitor symptoms.";
+
+        }
+
+        else{
+
+            condition =
+                "Further Evaluation Required";
+
+            severity =
+                "Unknown";
+
+            confidence =
+                75;
+
+            recommendation =
+                "Consult a healthcare professional.";
+        }
+
+
+        currentAssessment = {
+
+            name,
+            age,
+            gender,
+            symptoms,
+            condition,
+            severity,
+            confidence,
+            recommendation,
+            report: uploadedFileName,
+            timestamp:
+                new Date().toLocaleString()
+
+        };
+
+        history.pushState(
+            currentAssessment,
+            "",
+            "#assessment-" + Date.now()
+        );
+
+
+        document.getElementById("assessmentTime")
+        .innerText =
+            "Generated on: " +
+            currentAssessment.timestamp;
+
+
+        document.getElementById("condition")
+        .innerText =
+            condition;
+
+
+        document.getElementById("recommendation")
+        .innerText =
+            recommendation;
+
+
+        document.getElementById("confidenceBar")
+        .style.width =
+            confidence + "%";
+
+
+        document.getElementById("confidenceText")
+        .innerText =
+            confidence + "% Confidence";
+
+
+        const severityBadge =
+            document.getElementById("severity");
+
+
+        severityBadge.innerText =
+            severity + " Risk";
+
+
+        severityBadge.className =
+            "px-4 py-2 rounded-full font-semibold";
+
+
+        if(severity==="High"){
+
+            severityBadge.classList.add(
+                "bg-red-100",
+                "text-red-700"
+            );
+
+        }
+
+        else if(severity==="Moderate"){
+
+            severityBadge.classList.add(
+                "bg-yellow-100",
+                "text-yellow-700"
+            );
+
+        }
+
+        else{
+
+            severityBadge.classList.add(
+                "bg-green-100",
+                "text-green-700"
+            );
+        }
+
+
+    },2500);
+
+}
+
+
+/* LOCAL STORAGE API */
+
+function saveAssessment(){
+
+    let historyData =
+    JSON.parse(
+        localStorage.getItem("assessmentHistory")
+    ) || [];
+
+historyData.push(currentAssessment);
+
+localStorage.setItem(
+    "assessmentHistory",
+    JSON.stringify(historyData)
+);
+
+loadHistory();
+
+    document.getElementById("saveMessage")
+    .innerText =
+        "Assessment saved successfully!";
+}
+
+
+/* CLIPBOARD API */
+
+function copySummary(){
+
+    const summary =
+
+`Patient: ${currentAssessment.name}
+Condition: ${currentAssessment.condition}
+Severity: ${currentAssessment.severity}
+Confidence: ${currentAssessment.confidence}%`;
+
+
+    navigator.clipboard
+    .writeText(summary);
+
+    alert("Assessment copied!");
+}
+
+
+/* GEOLOCATION API */
+
+function findNearbyHospitals(){
+
+    if(navigator.geolocation){
+
+        navigator.geolocation
+        .getCurrentPosition(position=>{
+
+            const lat =
+                position.coords.latitude;
+
+            const lon =
+                position.coords.longitude;
+
+
+            document.getElementById("mapSection")
+            .classList.remove("hidden");
+
+
+            document.getElementById("hospitalMap")
+            .src =
+
+            `https://www.google.com/maps?q=hospitals+near+${lat},${lon}&output=embed`;
+
+        });
+
+    }
+
+    else{
+
+        alert(
+            "Geolocation is not supported by this browser."
+        );
+    }
+
+}
+
+/* HISTORY API */
+
+window.addEventListener("popstate", function(event){
+
+    if(event.state){
+
+        alert(
+            "Viewing previous assessment: "
+            + event.state.condition
+        );
+    }
+
+});
+
+function loadHistory(){
+
+    let records =
+        JSON.parse(
+            localStorage.getItem("assessmentHistory")
+        ) || [];
+
+    if(records.length===0){
+
+        return;
+    }
+
+    let html = "";
+
+    records.reverse().forEach((item,index)=>{
+
+        html += `
+
+        <div class="border border-slate-200 rounded-2xl p-4">
+
+            <p class="text-sm text-slate-500">
+
+                ${item.timestamp}
+
+            </p>
+
+            <h3 class="font-bold">
+
+                ${item.condition}
+
+            </h3>
+
+            <p>
+
+                Severity:
+                ${item.severity}
+
+            </p>
+
+            <p>
+
+                Confidence:
+                ${item.confidence}%
+
+            </p>
+
+        </div>
+
+        `;
+    });
+
+    document.getElementById(
+        "historyContainer"
+    ).innerHTML = html;
+}
+
+loadHistory();
+
+
+</script>
+
+</body>
+</html>

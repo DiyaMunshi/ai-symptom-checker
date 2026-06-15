@@ -22,25 +22,80 @@ body{
 <header class="bg-white shadow-sm sticky top-0 z-50">
     <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <h1 class="text-3xl font-bold text-emerald-600">SymptomAI</h1>
-        <ul class="hidden md:flex gap-8 font-medium">
-            <li>
-                <a href="#home" class="hover:text-emerald-600">Home</a>
-            </li>
-
-            <li>
-                <a href="#features" class="hover:text-emerald-600">Features</a>
-            </li>
-
-            <li>
-                <a href="#how" class="hover:text-emerald-600">How It Works</a>
-            </li>
-
-            <li>
-                <a href="#contact" class="hover:text-emerald-600">Contact</a>
-            </li>
-        </ul>
+        <div class="hidden md:flex items-center gap-8">
+            <ul class="flex gap-8 font-medium">
+                <li><a href="#home" class="hover:text-emerald-600">Home</a></li>
+                <li><a href="#features" class="hover:text-emerald-600">Features</a></li>
+                <li><a href="#how" class="hover:text-emerald-600">How It Works</a></li>
+                <li><a href="#contact" class="hover:text-emerald-600">Contact</a></li>
+            </ul>
+            <button onclick="openLogin()"
+                class="border border-emerald-600 text-emerald-600 px-4 py-2 rounded-xl hover:bg-emerald-600 hover:text-white transition">
+                Login
+            </button>
+            <button onclick="openSignup()"
+                class="bg-emerald-600 text-white px-4 py-2 rounded-xl hover:bg-emerald-700 transition">
+                Sign Up
+            </button>
+        </div>
     </nav>
 </header>
+
+<!-- LOGIN MODAL -->
+
+<div id="loginModal"
+    class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-3xl p-8 w-96">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold">
+                Login
+            </h2>
+            <button onclick="closeLogin()"
+                class="text-2xl font-bold">
+                ×
+            </button>
+        </div>
+        <input type="email"
+            placeholder="Email"
+            class="w-full border p-3 rounded-xl mb-4">
+        <input type="password"
+            placeholder="Password"
+            class="w-full border p-3 rounded-xl mb-6">
+        <button class="w-full bg-emerald-600 text-white py-3 rounded-xl hover:bg-emerald-700">
+            Login
+        </button>
+    </div>
+</div>
+
+
+<!-- SIGN UP MODAL -->
+
+<div id="signupModal"
+    class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-3xl p-8 w-96">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold">
+                Sign Up
+            </h2>
+            <button onclick="closeSignup()"
+                class="text-2xl font-bold">
+                ×
+            </button>
+        </div>
+        <input type="text"
+            placeholder="Full Name"
+            class="w-full border p-3 rounded-xl mb-4">
+        <input type="email"
+            placeholder="Email"
+            class="w-full border p-3 rounded-xl mb-4">
+        <input type="password"
+            placeholder="Password"
+            class="w-full border p-3 rounded-xl mb-6">
+        <button class="w-full bg-emerald-600 text-white py-3 rounded-xl hover:bg-emerald-700">
+            Create Account
+        </button>
+    </div>
+</div>
 
 <!-- HERO SECTION -->
 
@@ -55,8 +110,8 @@ body{
                 </h1>
                 <p class="mt-6 text-lg text-slate-600"> Analyze symptoms, assess health risks, and receive healthcare guidance instantly using Artificial Intelligence.</p>
                 <div class="mt-8 flex gap-4">
-                    <button class="bg-emerald-600 text-white px-6 py-3 rounded-xl hover:bg-emerald-700 transition">Get Started</button>
-                    <button class="border border-emerald-600 text-emerald-600 px-6 py-3 rounded-xl hover:bg-emerald-600 hover:text-white transition">Learn More</button>
+                    <a href="#check" class="bg-emerald-600 text-white px-6 py-3 rounded-xl hover:bg-emerald-700 transition">Get Started</a>
+                    <a href="#features" class="border border-emerald-600 text-emerald-600 px-6 py-3 rounded-xl hover:bg-emerald-600 hover:text-white transition">Learn More</a>
                 </div>
                 <div class="mt-6 space-y-2 text-slate-700">
                      <p class="flex items-center gap-2"> ✓ Instant Symptom Analysis </p>
@@ -165,11 +220,11 @@ body{
     </div>
 </section>
 
-<section class="py-12">
+<section class="py-12" id="check">
   <div class="max-w-4xl mx-auto bg-emerald-600 text-white rounded-3xl p-10 text-center">
       <h2 class="text-3xl font-bold"> Ready to Check Your Symptoms? </h2>
       <p class="mt-3"> Get AI-powered healthcare insights in seconds. </p>
-      <button class="mt-6 bg-white text-emerald-600 px-8 py-4 rounded-xl font-semibold"> Start Assessment </button>
+      <button onclick="window.location.href='assessment.html'" class="mt-6 bg-white text-emerald-600 px-8 py-4 rounded-xl font-semibold"> Start Assessment </button>
   </div>
 </section>
 
@@ -181,6 +236,31 @@ body{
         <p class="mt-4 text-slate-500"> © 2026 SymptomAI. All Rights Reserved. </p>
     </div>
 </footer>
+
+
+
+<script>
+
+<!-- login & signup modals -->
+
+    function openLogin() {
+        document.getElementById("loginModal").classList.remove("hidden");
+    }
+
+    function closeLogin() {
+        document.getElementById("loginModal").classList.add("hidden");
+    }
+
+    function openSignup() {
+        document.getElementById("signupModal").classList.remove("hidden");
+    }
+
+    function closeSignup() {
+        document.getElementById("signupModal").classList.add("hidden");
+    }
+
+</script>
+
 
 </body>
 </html>
