@@ -1,6 +1,9 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,851 +13,1887 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <style>
-    body{
-        font-family:'Inter',sans-serif;
-    }
 
-    .spinner{
-        border:6px solid #d1fae5;
-        border-top:6px solid #059669;
-        border-radius:50%;
-        width:60px;
-        height:60px;
-        animation:spin 1s linear infinite;
-    }
+body{
+font-family:'Inter',sans-serif;
+background:#f8fafc;
+}
 
-    @keyframes spin{
-        from {transform: rotate(0deg);}
-        to {transform: rotate(360deg);}
-    }
+.glass{
+background:rgba(255,255,255,0.75);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.3);
+}
+
+.spinner{
+border:6px solid #dbeafe;
+border-top:6px solid #2563eb;
+border-radius:50%;
+width:60px;
+height:60px;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+@keyframes floatCard{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.floating{
+animation:floatCard 4s ease-in-out infinite;
+}
 
 </style>
 
 </head>
 
-<body class="bg-slate-50 text-slate-800">
+<body class="text-slate-800">
 
-<!-- HEADER -->
+<!-- NAVBAR -->
 
-<header class="bg-white shadow-sm sticky top-0 z-50">
+<header
+class="bg-white/90 backdrop-blur-xl border-b border-slate-200 sticky top-0 z-50">
 
-    <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<nav
+class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        <h1 class="text-3xl font-bold text-emerald-600">
-            SymptomAI
-        </h1>
+<a href="index.html"
+class="flex items-center gap-3">
 
-        <a href="index.html"
-        class="bg-emerald-600 text-white px-5 py-2 rounded-xl hover:bg-emerald-700 transition">
+<div
+class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
 
-            ← Back to Home
+<i class="fa-solid fa-heart-pulse text-white"></i>
 
-        </a>
+</div>
 
-    </nav>
+<h1
+class="text-3xl font-extrabold text-blue-600">
+
+SymptomAI
+
+</h1>
+
+</a>
+
+<a href="index.html"
+class="bg-blue-600 text-white px-5 py-3 rounded-2xl hover:bg-blue-700 transition">
+
+← Back to Home
+
+</a>
+
+</nav>
 
 </header>
 
 
 <!-- HERO -->
 
-<section class="bg-emerald-50 py-14">
+<section
+class="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-sky-500 text-white">
 
-    <div class="max-w-5xl mx-auto px-6 text-center">
+<div
+class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl">
+</div>
 
-        <span class="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium">
+<div
+class="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl">
+</div>
 
-            AI Powered Assessment
+<div
+class="max-w-7xl mx-auto px-6 py-20">
 
-        </span>
+<div
+class="grid lg:grid-cols-2 gap-12 items-center">
 
-        <h1 class="text-5xl font-extrabold mt-6">
+<!-- LEFT -->
 
-            Health Assessment
+<div>
 
-        </h1>
+<span
+class="bg-white/20 px-5 py-2 rounded-full">
 
-        <p class="mt-4 text-lg text-slate-600">
+✨ AI-Powered Health Assessment
 
-            Enter your symptoms to receive an AI-assisted assessment and recommendations.
+</span>
 
-        </p>
+<h1
+class="text-6xl font-extrabold mt-6 leading-tight">
 
-    </div>
+Understand Your
+
+<span class="text-blue-200">
+
+Symptoms
+
+</span>
+
+With Confidence
+
+</h1>
+
+<p
+class="mt-6 text-xl text-white/90 leading-relaxed">
+
+Receive AI-assisted health insights, risk assessment,
+care suggestions, hospital recommendations, and
+personalized guidance.
+
+</p>
+
+<div
+class="grid grid-cols-2 gap-4 mt-10">
+
+<div
+class="bg-white/10 backdrop-blur-lg rounded-2xl p-4">
+
+<i class="fa-solid fa-brain text-2xl"></i>
+
+<h4 class="font-bold mt-2">
+
+AI Analysis
+
+</h4>
+
+</div>
+
+<div
+class="bg-white/10 backdrop-blur-lg rounded-2xl p-4">
+
+<i class="fa-solid fa-file-medical text-2xl"></i>
+
+<h4 class="font-bold mt-2">
+
+Medical Reports
+
+</h4>
+
+</div>
+
+<div
+class="bg-white/10 backdrop-blur-lg rounded-2xl p-4">
+
+<i class="fa-solid fa-location-dot text-2xl"></i>
+
+<h4 class="font-bold mt-2">
+
+Nearby Care
+
+</h4>
+
+</div>
+
+<div
+class="bg-white/10 backdrop-blur-lg rounded-2xl p-4">
+
+<i class="fa-solid fa-shield-heart text-2xl"></i>
+
+<h4 class="font-bold mt-2">
+
+Health Guidance
+
+</h4>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div
+class="relative">
+
+<div
+class="glass rounded-[40px] p-8 floating shadow-2xl">
+
+<h3
+class="text-slate-900 font-bold text-2xl">
+
+Assessment Preview
+
+</h3>
+
+<div class="mt-6">
+
+<p class="text-slate-500">
+
+Possible Condition
+
+</p>
+
+<h4
+class="text-blue-600 text-3xl font-bold">
+
+Viral Infection
+
+</h4>
+
+</div>
+
+<div class="mt-6">
+
+<p class="text-slate-500">
+
+Confidence
+
+</p>
+
+<div
+class="w-full h-4 bg-slate-200 rounded-full mt-2">
+
+<div
+class="w-[87%] h-4 bg-blue-600 rounded-full">
+
+</div>
+
+</div>
+
+<p
+class="mt-2 font-semibold text-slate-800">
+
+87%
+
+</p>
+
+</div>
+
+<div
+class="mt-5 inline-block bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full">
+
+Moderate Risk
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ASSESSMENT FORM -->
+<!-- FORM SECTION -->
 
-<section class="py-16">
+<section class="py-20">
 
-    <div class="max-w-5xl mx-auto px-6">
+<div
+class="max-w-6xl mx-auto px-6">
 
-        <div class="bg-white rounded-3xl shadow-lg p-8 space-y-8">
+<div
+class="glass rounded-[40px] shadow-2xl p-10">
 
-            <h2 class="text-3xl font-bold">
+<div
+class="flex items-center gap-4 mb-10">
 
-                Patient Information
+<div
+class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center">
 
-            </h2>
+<i class="fa-solid fa-user-doctor text-white text-xl"></i>
 
+</div>
 
-            <!-- NAME -->
+<h2
+class="text-4xl font-extrabold">
 
-            <div>
+Patient Information
 
-                <label class="font-medium">
+</h2>
 
-                    Full Name
+</div>
 
-                </label>
+<div
+class="grid md:grid-cols-2 gap-8">
 
-                <input
-                type="text"
-                id="patientName"
-                placeholder="Enter your full name"
-                class="w-full border p-3 rounded-xl mt-2">
+<!-- NAME -->
 
-            </div>
+<div>
 
+<label class="font-semibold">
 
-            <!-- AGE -->
+Full Name
 
-            <div>
+</label>
 
-                <label class="font-medium">
+<input
+type="text"
+id="patientName"
+placeholder="Enter your full name"
+class="w-full border border-slate-300 p-4 rounded-2xl mt-2 focus:ring-2 focus:ring-blue-500 outline-none">
 
-                    Age
+<p
+id="nameError"
+class="text-red-500 text-sm mt-1">
+</p>
 
-                </label>
+</div>
 
-                <input
-                type="number"
-                id="patientAge"
-                placeholder="Enter your age"
-                class="w-full border p-3 rounded-xl mt-2">
+<!-- AGE -->
 
-            </div>
+<div>
 
+<label class="font-semibold">
 
-            <!-- GENDER -->
+Age
 
-            <div>
+</label>
 
-                <label class="font-medium">
+<input
+type="number"
+id="patientAge"
+placeholder="Enter age"
+class="w-full border border-slate-300 p-4 rounded-2xl mt-2 focus:ring-2 focus:ring-blue-500 outline-none">
 
-                    Gender
+<p
+id="ageError"
+class="text-red-500 text-sm mt-1">
+</p>
 
-                </label>
+</div>
 
-                <select
-                id="patientGender"
-                class="w-full border p-3 rounded-xl mt-2">
+<!-- GENDER -->
 
-                    <option value="">
-                        Select Gender
-                    </option>
+<div>
 
-                    <option>
-                        Female
-                    </option>
+<label class="font-semibold">
 
-                    <option>
-                        Male
-                    </option>
+Gender
 
-                    <option>
-                        Other
-                    </option>
+</label>
 
-                </select>
+<select
+id="patientGender"
+class="w-full border border-slate-300 p-4 rounded-2xl mt-2">
 
-            </div>
+<option value="">
+Select Gender
+</option>
 
+<option>Female</option>
+<option>Male</option>
+<option>Other</option>
 
-            <!-- SYMPTOMS -->
+</select>
 
-            <div>
+</div>
 
-                <label class="font-medium">
+<!-- EMAIL -->
 
-                    Describe Your Symptoms
+<div>
 
-                </label>
+<label class="font-semibold">
 
-                <textarea
-                id="symptoms"
-                rows="5"
-                placeholder="Example: fever, headache, cough..."
-                class="w-full border p-3 rounded-xl mt-2"></textarea>
+Email
 
-            </div>
+</label>
 
-            <!-- FILE API -->
+<input
+type="email"
+id="patientEmail"
+placeholder="Enter email"
+class="w-full border border-slate-300 p-4 rounded-2xl mt-2">
 
-            <div>
+</div>
 
-                <label class="font-medium">
+</div>
 
-                    Upload Medical Report (Optional)
+<!-- SYMPTOMS -->
 
-                </label>
+<div class="mt-8">
 
-                <input
-                type="file"
-                id="medicalReport"
-                class="block mt-3">
+<label class="font-semibold">
 
-                <p
-                id="uploadedFile"
-                class="mt-2 text-slate-500">
+Describe Symptoms
 
-                    No file selected.
+</label>
 
-                </p>
+<textarea
+id="symptoms"
+rows="6"
+placeholder="Example: fever, cough, headache..."
+class="w-full border border-slate-300 p-4 rounded-2xl mt-2"></textarea>
 
-            </div>
+<div
+class="flex justify-between mt-2">
 
+<p
+id="symptomCounter"
+class="text-slate-500 text-sm">
 
-            <!-- GENERATE BUTTON -->
+0 characters
 
-            <button
-            onclick="generateAssessment()"
-            class="w-full bg-emerald-600 text-white py-4 rounded-xl font-semibold hover:bg-emerald-700 transition">
+</p>
 
-                ✨ Generate AI Assessment
+<p
+id="symptomHint"
+class="text-blue-600 text-sm">
 
-            </button>
+Provide detailed symptoms
 
-        </div>
+</p>
 
-    </div>
+</div>
+
+</div>
+
+<!-- FILE API -->
+
+<div class="mt-8">
+
+<label class="font-semibold">
+
+Upload Medical Report
+
+</label>
+
+<div
+class="border-2 border-dashed border-blue-300 rounded-3xl p-8 text-center mt-3 bg-blue-50">
+
+<input
+type="file"
+id="medicalReport"
+class="hidden">
+
+<label
+for="medicalReport"
+class="cursor-pointer">
+
+<i
+class="fa-solid fa-cloud-arrow-up text-4xl text-blue-600">
+</i>
+
+<p
+class="mt-3 font-semibold">
+
+Upload Report
+
+</p>
+
+<p
+id="uploadedFile"
+class="text-slate-500 mt-2">
+
+No file selected
+
+</p>
+
+</label>
+
+</div>
+
+</div>
+
+<!-- GENERATE BUTTON -->
+
+<button
+id="generateBtn"
+class="w-full mt-10 bg-blue-600 text-white py-5 rounded-2xl text-lg font-bold hover:bg-blue-700 hover:scale-[1.01] transition-all">
+
+✨ Generate AI Assessment
+
+</button>
+
+</div>
+
+</div>
 
 </section>
 
-
-<!-- AI LOADING -->
+<!-- LOADING SECTION -->
 
 <section
 id="loadingSection"
-class="hidden py-12">
+class="hidden py-16">
 
-    <div class="text-center">
+<div class="text-center">
 
-        <div class="spinner mx-auto"></div>
+<div class="spinner mx-auto"></div>
 
-        <h2 class="mt-6 text-2xl font-bold">
+<h2
+class="text-3xl font-bold mt-6">
 
-            Analyzing Symptoms...
+Analyzing Symptoms...
 
-        </h2>
+</h2>
 
-        <div class="mt-4 text-slate-600 space-y-2">
+<p
+class="text-slate-500 mt-3">
 
-            <p>
-                ✔ Cross-referencing symptom database
-            </p>
+AI is evaluating symptoms and generating recommendations
 
-            <p>
-                ✔ Evaluating severity patterns
-            </p>
+</p>
 
-            <p>
-                ✔ Generating recommendations
-            </p>
+<div
+class="mt-6 space-y-2 text-slate-600">
 
-        </div>
+<p>✔ Evaluating symptom patterns</p>
 
-    </div>
+<p>✔ Assessing risk factors</p>
+
+<p>✔ Generating care suggestions</p>
+
+<p>✔ Creating health guidance</p>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- RESULT CARD -->
+<!-- RESULT DASHBOARD -->
 
 <section
 id="resultSection"
-class="hidden py-12">
+class="hidden py-16">
 
-    <div class="max-w-5xl mx-auto px-6">
+<div
+class="max-w-7xl mx-auto px-6">
 
-        <div class="bg-white rounded-3xl shadow-lg p-8">
+<div
+class="grid lg:grid-cols-3 gap-8">
 
-            <div class="flex justify-between items-start flex-wrap gap-4">
+<!-- MAIN RESULT CARD -->
 
-                <div>
+<div
+class="lg:col-span-2">
 
-                    <h2 class="text-3xl font-bold">
+<div
+class="bg-white rounded-[40px] shadow-2xl p-8">
 
-                        AI Assessment Result
+<div
+class="flex justify-between items-center flex-wrap gap-4">
 
-                    </h2>
+<div>
 
-                    <p
-                    id="assessmentTime"
-                    class="text-slate-500 mt-2">
+<h2
+class="text-4xl font-extrabold">
 
-                    </p>
+AI Assessment Result
 
-                </div>
+</h2>
 
-                <span
-                id="severity"
-                class="px-4 py-2 rounded-full font-semibold">
+<p
+id="assessmentTime"
+class="text-slate-500 mt-2">
 
-                </span>
+</p>
 
-            </div>
+</div>
 
-            <div class="mt-8 space-y-6">
+<span
+id="severity"
+class="px-5 py-3 rounded-full font-bold">
 
-                <div>
+</span>
 
-                    <p class="text-slate-500">
+</div>
 
-                        Possible Condition
+<hr class="my-8">
 
-                    </p>
+<!-- CONDITION -->
 
-                    <h3
-                    id="condition"
-                    class="text-2xl font-bold text-emerald-700">
+<div>
 
-                    </h3>
+<p class="text-slate-500">
 
-                </div>
+Possible Condition
 
-                <div>
+</p>
 
-                    <p class="text-slate-500">
+<h3
+id="condition"
+class="text-4xl font-extrabold text-blue-600 mt-2">
 
-                        Recommendation
+</h3>
 
-                    </p>
+</div>
 
-                    <p
-                    id="recommendation"
-                    class="font-medium text-lg">
+<!-- RECOMMENDATION -->
 
-                    </p>
+<div class="mt-8">
 
-                </div>
+<p class="text-slate-500">
 
-                <div>
+Assessment Summary
 
-                    <p class="text-slate-500">
+</p>
 
-                        Confidence Score
+<p
+id="assessmentSummary"
+class="text-lg mt-2">
 
-                    </p>
+</p>
 
-                    <div class="w-full bg-slate-200 rounded-full h-4 mt-2">
+</div>
 
-                        <div
-                        id="confidenceBar"
-                        class="bg-emerald-600 h-4 rounded-full"
-                        style="width:0%">
+<!-- IMMEDIATE CARE -->
 
-                        </div>
+<div
+class="mt-8 bg-blue-50 border border-blue-200 rounded-3xl p-6">
 
-                    </div>
+<h4
+class="font-bold text-blue-700 text-xl">
 
-                    <p
-                    id="confidenceText"
-                    class="mt-2 font-medium">
+🩺 Immediate Care Suggestions
 
-                    </p>
+</h4>
 
-                </div>
-                <!-- ACTION BUTTONS -->
+<p
+id="careSuggestions"
+class="mt-3 text-slate-700">
 
-                <div class="flex flex-wrap gap-4 pt-4">
+</p>
 
-                    <button onclick="saveAssessment()"
-                    class="bg-emerald-600 text-white px-6 py-3 rounded-xl hover:bg-emerald-700">
+</div>
 
-                        💾 Save Assessment
+<!-- DOCTOR ADVICE -->
 
-                    </button>
+<div
+class="mt-8 bg-emerald-50 border border-emerald-200 rounded-3xl p-6">
 
-                    <button onclick="copySummary()"
-                    class="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700">
+<h4
+class="font-bold text-emerald-700 text-xl">
 
-                        📋 Copy Summary
+👨‍⚕ When Should You Visit a Doctor?
 
-                    </button>
+</h4>
 
-                    <button onclick="findNearbyHospitals()"
-                    class="bg-red-600 text-white px-6 py-3 rounded-xl hover:bg-red-700">
+<p
+id="doctorAdvice"
+class="mt-3 text-slate-700">
 
-                        📍 Find Nearby Hospitals
+</p>
 
-                    </button>
+</div>
 
-                </div>
+<!-- EMERGENCY WARNING -->
 
-                <p id="saveMessage"
-                class="mt-4 text-emerald-600 font-medium">
+<div
+class="mt-8 bg-red-50 border border-red-200 rounded-3xl p-6">
 
-                </p>
+<h4
+class="font-bold text-red-700 text-xl">
 
-            </div>
+🚨 Emergency Warning
 
-        </div>
+</h4>
 
-    </div>
+<p
+id="emergencyWarning"
+class="mt-3 text-slate-700">
+
+</p>
+
+</div>
+
+<!-- ACTION BUTTONS -->
+
+<div
+class="flex flex-wrap gap-4 mt-10">
+
+<button
+onclick="saveAssessment()"
+class="bg-blue-600 text-white px-6 py-3 rounded-2xl hover:bg-blue-700">
+
+💾 Save Assessment
+
+</button>
+
+<button
+onclick="copySummary()"
+class="bg-slate-800 text-white px-6 py-3 rounded-2xl">
+
+📋 Copy Summary
+
+</button>
+
+<button
+onclick="findNearbyHospitals()"
+class="bg-red-600 text-white px-6 py-3 rounded-2xl">
+
+📍 Nearby Hospitals
+
+</button>
+
+</div>
+
+<p
+id="saveMessage"
+class="mt-4 text-blue-600 font-semibold">
+
+</p>
+
+</div>
+
+</div>
+
+<!-- RIGHT PANEL -->
+
+<div
+class="space-y-8">
+
+<!-- RISK METER -->
+
+<div
+class="bg-white rounded-[40px] shadow-2xl p-8">
+
+<h3
+class="text-2xl font-bold">
+
+Health Risk Score
+
+</h3>
+
+<div
+class="flex justify-center mt-6">
+
+<canvas
+id="riskCanvas"
+width="250"
+height="250">
+
+</canvas>
+
+</div>
+
+<p
+id="confidenceText"
+class="text-center text-xl font-bold mt-4">
+
+</p>
+
+</div>
+
+<!-- CONFIDENCE BAR -->
+
+<div
+class="bg-white rounded-[40px] shadow-2xl p-8">
+
+<h3
+class="text-2xl font-bold">
+
+Confidence Score
+
+</h3>
+
+<div
+class="w-full bg-slate-200 h-5 rounded-full mt-6">
+
+<div
+id="confidenceBar"
+class="bg-blue-600 h-5 rounded-full"
+style="width:0%">
+
+</div>
+
+</div>
+
+<p
+id="confidencePercentage"
+class="mt-4 font-bold text-lg">
+
+</p>
+
+</div>
+
+<!-- HEALTH TIPS -->
+
+<div
+class="bg-gradient-to-br from-blue-600 to-sky-500 text-white rounded-[40px] p-8 shadow-2xl">
+
+<h3
+class="text-2xl font-bold">
+
+💡 Health Tip
+
+</h3>
+
+<p
+class="mt-4">
+
+Early symptom monitoring can improve health outcomes.
+Always seek professional medical advice when symptoms persist.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- HOSPITAL MAP -->
+<!-- HOSPITAL SECTION -->
 
-<section id="mapSection"
-class="hidden py-12">
+<section
+id="mapSection"
+class="hidden py-16">
 
-    <div class="max-w-5xl mx-auto px-6">
+<div
+class="max-w-7xl mx-auto px-6">
 
-        <div class="bg-white rounded-3xl shadow-lg p-8">
+<div
+class="bg-white rounded-[40px] shadow-2xl p-8">
 
-            <h2 class="text-2xl font-bold mb-6">
+<div
+class="flex justify-between items-center flex-wrap gap-4">
 
-                Nearby Hospitals
+<div>
 
-            </h2>
+<h2
+class="text-3xl font-extrabold">
 
-            <iframe
-            id="hospitalMap"
-            class="w-full rounded-2xl"
-            height="400"
-            loading="lazy">
+Nearby Hospitals
 
-            </iframe>
+</h2>
 
-        </div>
+<p
+class="text-slate-500 mt-2">
 
-    </div>
+Based on your current location
+
+</p>
+
+</div>
+
+<div
+class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full">
+
+📍 Location Enabled
+
+</div>
+
+</div>
+
+<div
+id="hospitalInfo"
+class="grid md:grid-cols-3 gap-6 mt-8 mb-8">
+
+<div class="bg-blue-50 p-5 rounded-2xl">
+
+<h4 class="font-bold text-blue-700">
+
+🏥 Nearby Hospitals
+
+</h4>
+
+<p class="text-slate-600 mt-2">
+
+Discover healthcare facilities close to your current location.
+
+</p>
+
+</div>
+
+<div class="bg-green-50 p-5 rounded-2xl">
+
+<h4 class="font-bold text-green-700">
+
+🚑 Emergency Access
+
+</h4>
+
+<p class="text-slate-600 mt-2">
+
+Quick access to emergency healthcare services.
+
+</p>
+
+</div>
+
+<div class="bg-purple-50 p-5 rounded-2xl">
+
+<h4 class="font-bold text-purple-700">
+
+📍 Current Location
+
+</h4>
+
+<p
+id="locationText"
+class="text-slate-600 mt-2">
+
+Waiting for location...
+
+</p>
+
+</div>
+
+</div>
+
+<!-- MAP -->
+
+<iframe
+id="hospitalMap"
+class="w-full rounded-3xl mt-8"
+height="500"
+loading="lazy">
+
+</iframe>
+
+</div>
+
+</div>
 
 </section>
 
-<section class="py-12">
+<!-- ASSESSMENT HISTORY -->
 
-    <div class="max-w-5xl mx-auto px-6">
+<section
+id="historySection"
+class="py-16">
 
-        <div class="bg-white rounded-3xl shadow-lg p-8">
+<div
+class="max-w-7xl mx-auto px-6">
 
-            <h2 class="text-2xl font-bold mb-6">
+<div
+class="bg-white rounded-[40px] shadow-2xl p-8">
 
-                Assessment History
+<h2
+class="text-3xl font-extrabold mb-8">
 
-            </h2>
+📋 Assessment History
 
-            <div id="historyContainer"
-                 class="space-y-4">
+</h2>
 
-                <p class="text-slate-500">
+<div
+id="historyContainer"
+class="grid md:grid-cols-2 gap-6">
 
-                    No previous assessments found.
+<p class="text-slate-500">
 
-                </p>
+No saved assessments yet.
 
-            </div>
+</p>
 
-        </div>
+</div>
 
-    </div>
+</div>
+
+</div>
 
 </section>
-
 
 <script>
 
-let currentAssessment = {};
+/* =====================================================
+   GLOBAL VARIABLES
+===================================================== */
+
 let uploadedFileName = "";
+let currentAssessment = {};
 
+/* =====================================================
+   EVENT LISTENERS
+===================================================== */
 
-/* FILE API */
+/* 1 - Name Validation */
 
-document.getElementById("medicalReport")
-.addEventListener("change", function(){
+document
+.getElementById("patientName")
+.addEventListener("input", function(){
 
-    if(this.files.length > 0){
+const value = this.value.trim();
 
-        uploadedFileName = this.files[0].name;
+if(value.length < 3){
 
-        document.getElementById("uploadedFile")
-        .innerText =
-            "Uploaded: " + uploadedFileName;
-    }
+document
+.getElementById("nameError")
+.innerText =
+"Name must contain at least 3 characters";
+
+}
+else{
+
+document
+.getElementById("nameError")
+.innerText = "";
+
+}
 
 });
 
-/* AI ASSESSMENT */
 
-function generateAssessment(){
+/* 2 - Age Validation */
 
-    const name =
-        document.getElementById("patientName").value;
+document
+.getElementById("patientAge")
+.addEventListener("blur", function(){
 
-    const age =
-        document.getElementById("patientAge").value;
+const age = parseInt(this.value);
 
-    const gender =
-        document.getElementById("patientGender").value;
+if(age < 1 || age > 120){
 
-    const symptoms =
-        document.getElementById("symptoms")
-        .value.toLowerCase();
+document
+.getElementById("ageError")
+.innerText =
+"Please enter a valid age";
 
+}
+else{
 
-    if(!name || !age || !gender || !symptoms){
-
-        alert("Please complete all required fields.");
-
-        return;
-    }
-
-
-    document.getElementById("loadingSection")
-    .classList.remove("hidden");
-
-
-    setTimeout(()=>{
-
-        document.getElementById("loadingSection")
-        .classList.add("hidden");
-
-        document.getElementById("resultSection")
-        .classList.remove("hidden");
-
-
-        let condition;
-        let severity;
-        let confidence;
-        let recommendation;
-
-
-        if(
-            symptoms.includes("chest pain") ||
-            symptoms.includes("shortness of breath")
-        ){
-
-            condition =
-                "Possible Cardiac Emergency";
-
-            severity =
-                "High";
-
-            confidence =
-                96;
-
-            recommendation =
-                "Seek immediate medical attention.";
-
-        }
-
-        else if(
-            symptoms.includes("fever") ||
-            symptoms.includes("headache") ||
-            symptoms.includes("fatigue")
-        ){
-
-            condition =
-                "Possible Viral Infection";
-
-            severity =
-                "Moderate";
-
-            confidence =
-                87;
-
-            recommendation =
-                "Monitor symptoms and consult a physician if symptoms persist.";
-
-        }
-
-        else if(
-            symptoms.includes("cough") ||
-            symptoms.includes("sneezing")
-        ){
-
-            condition =
-                "Common Cold";
-
-            severity =
-                "Low";
-
-            confidence =
-                82;
-
-            recommendation =
-                "Rest, stay hydrated, and monitor symptoms.";
-
-        }
-
-        else{
-
-            condition =
-                "Further Evaluation Required";
-
-            severity =
-                "Unknown";
-
-            confidence =
-                75;
-
-            recommendation =
-                "Consult a healthcare professional.";
-        }
-
-
-        currentAssessment = {
-
-            name,
-            age,
-            gender,
-            symptoms,
-            condition,
-            severity,
-            confidence,
-            recommendation,
-            report: uploadedFileName,
-            timestamp:
-                new Date().toLocaleString()
-
-        };
-
-        history.pushState(
-            currentAssessment,
-            "",
-            "#assessment-" + Date.now()
-        );
-
-
-        document.getElementById("assessmentTime")
-        .innerText =
-            "Generated on: " +
-            currentAssessment.timestamp;
-
-
-        document.getElementById("condition")
-        .innerText =
-            condition;
-
-
-        document.getElementById("recommendation")
-        .innerText =
-            recommendation;
-
-
-        document.getElementById("confidenceBar")
-        .style.width =
-            confidence + "%";
-
-
-        document.getElementById("confidenceText")
-        .innerText =
-            confidence + "% Confidence";
-
-
-        const severityBadge =
-            document.getElementById("severity");
-
-
-        severityBadge.innerText =
-            severity + " Risk";
-
-
-        severityBadge.className =
-            "px-4 py-2 rounded-full font-semibold";
-
-
-        if(severity==="High"){
-
-            severityBadge.classList.add(
-                "bg-red-100",
-                "text-red-700"
-            );
-
-        }
-
-        else if(severity==="Moderate"){
-
-            severityBadge.classList.add(
-                "bg-yellow-100",
-                "text-yellow-700"
-            );
-
-        }
-
-        else{
-
-            severityBadge.classList.add(
-                "bg-green-100",
-                "text-green-700"
-            );
-        }
-
-
-    },2500);
+document
+.getElementById("ageError")
+.innerText = "";
 
 }
 
+});
 
-/* LOCAL STORAGE API */
+
+/* 3 - Gender Change */
+
+document
+.getElementById("patientGender")
+.addEventListener("change", function(){
+
+console.log(
+"Gender Selected:",
+this.value
+);
+
+});
+
+
+/* 4 - Symptom Counter */
+
+document
+.getElementById("symptoms")
+.addEventListener("keyup", function(){
+
+document
+.getElementById("symptomCounter")
+.innerText =
+this.value.length +
+" characters";
+
+});
+
+
+/* 5 - File Upload */
+
+document
+.getElementById("medicalReport")
+.addEventListener("change", function(){
+
+if(this.files.length > 0){
+
+uploadedFileName =
+this.files[0].name;
+
+document
+.getElementById("uploadedFile")
+.innerText =
+uploadedFileName;
+
+}
+
+});
+
+/* =====================================================
+   GEMINI API
+===================================================== */
+
+async function getGeminiAssessment(symptoms){
+
+const API_KEY =
+"AQ.Ab8RN6J9e58jlzn6CPHdcAAcnhOpgb1jO4ikoeqfhq5_0ejD9Q";
+
+try{
+
+const response = await fetch(
+`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`,
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+
+contents:[
+{
+parts:[
+{
+text:`
+You are a healthcare assistant.
+
+Patient Symptoms:
+${symptoms}
+
+Return ONLY in this format:
+
+Condition: <condition>
+Risk: <Low/Moderate/High>
+Confidence: <number>
+Summary: <summary>
+ImmediateCare: <care>
+DoctorAdvice: <advice>
+EmergencyWarning: <warning>
+`
+}
+]
+}
+]
+
+})
+}
+);
+
+const data =
+await response.json();
+
+console.log("FULL GEMINI RESPONSE", data);
+
+if(data.error){
+
+throw new Error(
+data.error.message
+);
+
+}
+
+const text =
+data.candidates?.[0]?.content?.parts?.[0]?.text || "";
+
+console.log("Gemini Text:", text);
+
+const getField = (label)=>{
+
+const regex =
+new RegExp(
+`${label}:\\s*(.*)`,
+"i"
+);
+
+const match =
+text.match(regex);
+
+return match
+? match[1].trim()
+: "";
+
+};
+
+return {
+
+condition:
+getField("Condition"),
+
+risk:
+getField("Risk"),
+
+confidence:
+getField("Confidence"),
+
+summary:
+getField("Summary"),
+
+immediateCare:
+getField("ImmediateCare"),
+
+doctorAdvice:
+getField("DoctorAdvice"),
+
+emergencyWarning:
+getField("EmergencyWarning"),
+
+raw:text
+
+};
+
+}
+catch(error){
+
+console.error(
+"Gemini Error:",
+error
+);
+
+return null;
+
+}
+
+}
+/* =====================================================
+   CANVAS API
+===================================================== */
+
+function drawRiskMeter(score){
+
+const canvas =
+document.getElementById("riskCanvas");
+
+const ctx =
+canvas.getContext("2d");
+
+ctx.clearRect(
+0,
+0,
+250,
+250
+);
+
+ctx.beginPath();
+
+ctx.arc(
+125,
+125,
+80,
+0,
+2*Math.PI
+);
+
+ctx.strokeStyle =
+"#e5e7eb";
+
+ctx.lineWidth = 15;
+
+ctx.stroke();
+
+
+ctx.beginPath();
+
+ctx.arc(
+125,
+125,
+80,
+-Math.PI/2,
+(-Math.PI/2)
++
+(score/100)
+*
+2
+*
+Math.PI
+);
+
+ctx.strokeStyle =
+"#2563eb";
+
+ctx.lineWidth =
+15;
+
+ctx.stroke();
+
+ctx.font =
+"bold 28px Arial";
+
+ctx.fillStyle =
+"#111827";
+
+ctx.textAlign =
+"center";
+
+ctx.fillText(
+score + "%",
+125,
+135
+);
+
+}
+
+/* =====================================================
+   GENERATE ASSESSMENT
+===================================================== */
+
+async function generateAssessment(){
+
+const name =
+document.getElementById("patientName").value.trim();
+
+const age =
+document.getElementById("patientAge").value;
+
+const gender =
+document.getElementById("patientGender").value;
+
+const symptoms =
+document.getElementById("symptoms").value.trim();
+
+/* Validation */
+
+if(!name || !age || !gender || !symptoms){
+
+alert("Please complete all fields.");
+return;
+
+}
+
+if(name.length < 3){
+
+alert("Name must contain at least 3 characters.");
+return;
+
+}
+
+if(age < 1 || age > 120){
+
+alert("Please enter a valid age.");
+return;
+
+}
+
+/* Show Loader */
+
+document
+.getElementById("loadingSection")
+.classList
+.remove("hidden");
+
+let aiResult;
+
+try{
+
+aiResult =
+await getGeminiAssessment(symptoms);
+
+console.log("Gemini Parsed Result:", aiResult);
+
+}
+catch(error){
+
+console.error(error);
+
+aiResult = null;
+
+}
+
+/* FALLBACK SYSTEM */
+
+if(
+!aiResult ||
+!aiResult.condition
+){
+
+const symptomsLower =
+symptoms.toLowerCase();
+
+if(symptomsLower.includes("chest pain")){
+
+aiResult = {
+
+condition:
+"Possible Cardiac Concern",
+
+risk:
+"High",
+
+confidence:
+95,
+
+summary:
+"Symptoms may indicate a cardiovascular issue requiring urgent evaluation.",
+
+immediateCare:
+"Stop physical activity and rest immediately.",
+
+doctorAdvice:
+"Consult a cardiologist or emergency physician immediately.",
+
+emergencyWarning:
+"Seek emergency care if pain spreads to the arm, jaw or causes breathing difficulty."
+
+};
+
+}
+else if(symptomsLower.includes("fever")){
+
+aiResult = {
+
+condition:
+"Possible Viral Infection",
+
+risk:
+"Moderate",
+
+confidence:
+87,
+
+summary:
+"Symptoms may indicate a viral infection requiring monitoring and rest.",
+
+immediateCare:
+"Drink fluids, take rest and monitor temperature.",
+
+doctorAdvice:
+"Consult a doctor if fever persists beyond 3 days.",
+
+emergencyWarning:
+"Seek medical care if fever exceeds 103°F."
+
+};
+
+}
+else{
+
+aiResult = {
+
+condition:
+"General Health Concern",
+
+risk:
+"Low",
+
+confidence:
+75,
+
+summary:
+"Symptoms require further evaluation for accurate diagnosis.",
+
+immediateCare:
+"Rest and monitor symptoms carefully.",
+
+doctorAdvice:
+"Consult a healthcare professional if symptoms worsen.",
+
+emergencyWarning:
+"Seek urgent care if severe symptoms develop."
+
+};
+
+}
+
+}
+
+/* Safety Override */
+
+const symptomsLower =
+symptoms.toLowerCase();
+
+if(symptomsLower.includes("chest pain")){
+
+aiResult.risk = "High";
+aiResult.confidence = 95;
+
+}
+
+setTimeout(()=>{
+
+document
+.getElementById("loadingSection")
+.classList
+.add("hidden");
+
+document
+.getElementById("resultSection")
+.classList
+.remove("hidden");
+
+/* Values */
+
+const condition =
+aiResult.condition || "Unknown Condition";
+
+const severity =
+aiResult.risk || "Moderate";
+
+const confidence =
+parseInt(aiResult.confidence) || 75;
+
+const assessmentSummary =
+aiResult.summary || "Assessment completed.";
+
+const immediateCare =
+aiResult.immediateCare || "Follow general precautions.";
+
+const doctorAdvice =
+aiResult.doctorAdvice || "Consult a doctor if symptoms worsen.";
+
+const emergencyWarning =
+aiResult.emergencyWarning || "Seek emergency care if symptoms become severe.";
+
+/* Save Object */
+
+currentAssessment = {
+
+name,
+age,
+gender,
+symptoms,
+
+condition,
+severity,
+confidence,
+
+summary:
+assessmentSummary,
+
+immediateCare,
+doctorAdvice,
+emergencyWarning,
+
+report:
+uploadedFileName,
+
+timestamp:
+new Date().toLocaleString()
+
+};
+
+/* Populate UI */
+
+if(document.getElementById("assessmentTime")){
+
+document.getElementById("assessmentTime").innerText =
+currentAssessment.timestamp;
+
+}
+
+if(document.getElementById("condition")){
+
+document.getElementById("condition").innerText =
+condition;
+
+}
+
+if(document.getElementById("assessmentSummary")){
+
+document.getElementById("assessmentSummary").innerText =
+assessmentSummary;
+
+}
+
+if(document.getElementById("careSuggestions")){
+
+document.getElementById("careSuggestions").innerText =
+immediateCare;
+
+}
+
+if(document.getElementById("doctorAdvice")){
+
+document.getElementById("doctorAdvice").innerText =
+doctorAdvice;
+
+}
+
+if(document.getElementById("emergencyWarning")){
+
+document.getElementById("emergencyWarning").innerText =
+emergencyWarning;
+
+}
+
+/* Confidence Bar */
+
+if(document.getElementById("confidenceBar")){
+
+document.getElementById("confidenceBar").style.width =
+confidence + "%";
+
+}
+
+if(document.getElementById("confidenceText")){
+
+document.getElementById("confidenceText").innerText =
+confidence + "% Risk Score";
+
+}
+
+if(document.getElementById("confidencePercentage")){
+
+document.getElementById("confidencePercentage").innerText =
+confidence + "% Confidence";
+
+}
+
+/* Severity Badge */
+
+const badge =
+document.getElementById("severity");
+
+if(badge){
+
+badge.innerText =
+severity + " Risk";
+
+if(severity === "High"){
+
+badge.className =
+"px-5 py-3 rounded-full font-bold bg-red-100 text-red-700";
+
+}
+else if(severity === "Moderate"){
+
+badge.className =
+"px-5 py-3 rounded-full font-bold bg-yellow-100 text-yellow-700";
+
+}
+else{
+
+badge.className =
+"px-5 py-3 rounded-full font-bold bg-green-100 text-green-700";
+
+}
+
+}
+
+/* Canvas */
+
+if(document.getElementById("riskCanvas")){
+
+drawRiskMeter(confidence);
+
+}
+
+},1500);
+
+}
+/* =====================================================
+   LOCAL STORAGE API
+===================================================== */
 
 function saveAssessment(){
 
-    let historyData =
-    JSON.parse(
-        localStorage.getItem("assessmentHistory")
-    ) || [];
+let historyData =
+JSON.parse(
+localStorage.getItem(
+"assessmentHistory"
+)
+)
+||
+[];
 
-historyData.push(currentAssessment);
+historyData.push(
+currentAssessment
+);
 
 localStorage.setItem(
-    "assessmentHistory",
-    JSON.stringify(historyData)
+"assessmentHistory",
+JSON.stringify(
+historyData
+)
 );
+
+document
+.getElementById("saveMessage")
+.innerText =
+"Assessment Saved Successfully";
 
 loadHistory();
 
-    document.getElementById("saveMessage")
-    .innerText =
-        "Assessment saved successfully!";
 }
 
 
-/* CLIPBOARD API */
+/* =====================================================
+   CLIPBOARD API
+===================================================== */
 
 function copySummary(){
 
-    const summary =
+const summary =
 
-`Patient: ${currentAssessment.name}
-Condition: ${currentAssessment.condition}
-Severity: ${currentAssessment.severity}
-Confidence: ${currentAssessment.confidence}%`;
+`
+Patient:
+${currentAssessment.name}
 
+Condition:
+${currentAssessment.condition}
 
-    navigator.clipboard
-    .writeText(summary);
+Severity:
+${currentAssessment.severity}
 
-    alert("Assessment copied!");
+Confidence:
+${currentAssessment.confidence}%
+`;
+
+navigator.clipboard
+.writeText(summary);
+
+alert(
+"Assessment copied."
+);
+
 }
 
 
-/* GEOLOCATION API */
+/* =====================================================
+   GEOLOCATION API
+===================================================== */
 
 function findNearbyHospitals(){
 
     if(navigator.geolocation){
 
-        navigator.geolocation
-        .getCurrentPosition(position=>{
+        navigator.geolocation.getCurrentPosition(
 
-            const lat =
+            (position)=>{
+
+                const lat =
                 position.coords.latitude;
 
-            const lon =
+                const lon =
                 position.coords.longitude;
 
+                // Show Map Section
 
-            document.getElementById("mapSection")
-            .classList.remove("hidden");
+                document
+                .getElementById("mapSection")
+                .classList
+                .remove("hidden");
 
+                // Show User Location
 
-            document.getElementById("hospitalMap")
-            .src =
+                document
+                .getElementById("locationText")
+                .innerText =
 
-            `https://www.google.com/maps?q=hospitals+near+${lat},${lon}&output=embed`;
+                lat.toFixed(3)
+                +
+                ", "
+                +
+                lon.toFixed(3);
 
-        });
+                // Zoomed Hospital Map
+
+                document
+                .getElementById("hospitalMap")
+                .src =
+
+                `https://maps.google.com/maps?q=hospitals+near+${lat},${lon}&z=12&output=embed`;
+
+            },
+
+            ()=>{
+
+                alert(
+                "Unable to retrieve location."
+                );
+
+            }
+
+        );
 
     }
-
     else{
 
         alert(
-            "Geolocation is not supported by this browser."
+        "Geolocation not supported."
         );
+
     }
 
 }
+function loadHistory(){
 
-/* HISTORY API */
+let records =
+JSON.parse(
+localStorage.getItem(
+"assessmentHistory"
+)
+)
+||
+[];
 
-window.addEventListener("popstate", function(event){
+if(records.length===0){
 
-    if(event.state){
+return;
 
-        alert(
-            "Viewing previous assessment: "
-            + event.state.condition
-        );
-    }
+}
+
+let html = "";
+
+records
+.slice()
+.reverse()
+.forEach(item=>{
+
+html += `
+
+<div
+class="border border-slate-200 rounded-3xl p-5">
+
+<p
+class="text-sm text-slate-500">
+
+${item.timestamp}
+
+</p>
+
+<h3
+class="text-xl font-bold mt-2 text-blue-600">
+
+${item.condition}
+
+</h3>
+
+<p class="mt-2">
+
+Severity:
+${item.severity}
+
+</p>
+
+<p>
+
+Confidence:
+${item.confidence}%
+
+</p>
+
+</div>
+
+`;
 
 });
 
-function loadHistory(){
+document
+.getElementById(
+"historyContainer"
+)
+.innerHTML = html;
 
-    let records =
-        JSON.parse(
-            localStorage.getItem("assessmentHistory")
-        ) || [];
-
-    if(records.length===0){
-
-        return;
-    }
-
-    let html = "";
-
-    records.reverse().forEach((item,index)=>{
-
-        html += `
-
-        <div class="border border-slate-200 rounded-2xl p-4">
-
-            <p class="text-sm text-slate-500">
-
-                ${item.timestamp}
-
-            </p>
-
-            <h3 class="font-bold">
-
-                ${item.condition}
-
-            </h3>
-
-            <p>
-
-                Severity:
-                ${item.severity}
-
-            </p>
-
-            <p>
-
-                Confidence:
-                ${item.confidence}%
-
-            </p>
-
-        </div>
-
-        `;
-    });
-
-    document.getElementById(
-        "historyContainer"
-    ).innerHTML = html;
 }
 
-loadHistory();
+/* =====================================================
+   GENERATE BUTTON
+===================================================== */
 
+document
+.getElementById("generateBtn")
+.addEventListener(
+"click",
+generateAssessment
+);
+
+loadHistory();
 
 </script>
 
