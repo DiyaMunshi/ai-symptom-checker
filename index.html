@@ -70,7 +70,7 @@ body{
         <input type="password"
             placeholder="Password"
             class="w-full border p-3 rounded-xl mb-6">
-        <button class="w-full bg-emerald-600 text-white py-3 rounded-xl hover:bg-emerald-700">
+        <button class="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700">
             Login
         </button>
     </div>
@@ -100,7 +100,7 @@ body{
         <input type="password"
             placeholder="Password"
             class="w-full border p-3 rounded-xl mb-6">
-        <button class="w-full bg-emerald-600 text-white py-3 rounded-xl hover:bg-emerald-700">
+        <button class="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700">
             Create Account
         </button>
     </div>
@@ -108,7 +108,7 @@ body{
 
 <!-- HERO SECTION -->
 
-<section id="home" class="relative overflow-hidden min-h-screen">
+<section id="home" class="relative overflow-hidden min-h-[85vh] lg:min-h-[88vh]">
 
     <!-- Background Image -->
     <div class="absolute inset-0">
@@ -119,10 +119,10 @@ body{
     </div>
 
     <!-- Overlay -->
-    <div class="absolute inset-0 bg-white/30 backdrop-blur-[2px]"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-white/50 via-white/35 to-white/15"></div>
 
     <!-- Hero Content -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-56">
+    <div class="relative z-10 max-w-7xl mx-auto px-8 lg:px-10 pt-16 lg:pt-20 pb-32">
 
         <div class="grid lg:grid-cols-2 gap-12 items-center">
 
@@ -138,7 +138,7 @@ body{
                 </span>
 
                 <h1
-                    class="mt-6 text-6xl lg:text-7xl font-extrabold leading-tight text-slate-900">
+                    class="mt-5 text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900">
 
                     Your Personal
 
@@ -153,7 +153,7 @@ body{
                 </h1>
 
                 <p
-                    class="mt-6 text-xl text-slate-900 max-w-xl leading-relaxed">
+                    class="mt-5 text-lg lg:text-xl text-slate-700 max-w-lg leading-8">
 
                     Understand symptoms, organize medical records,
                     track assessments, and discover nearby healthcare
@@ -165,7 +165,7 @@ body{
 
                     <a
                         href="assessment.html"
-                        class="bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all duration-300 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl">
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-7 py-3.5 rounded-2xl font-semibold shadow-lg hover:scale-105 transition">
 
                         🩺 Start Assessment
 
@@ -173,7 +173,7 @@ body{
 
                     <a
                         href="#how"
-                        class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all px-8 py-4 rounded-2xl font-semibold">
+                        class="border-2 border-blue-600 text-blue-600 px-7 py-3.5 rounded-2xl font-semibold hover:bg-blue-600 hover:text-white transition">
 
                         ▶ See How It Works
 
@@ -214,65 +214,6 @@ body{
                         <p class="text-slate-500 text-sm">
                             Find hospitals instantly
                         </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- RIGHT CONTENT -->
-
-            <div class="relative">
-
-
-                <!-- Assessment Card -->
-
-                <div
-                    class="absolute top-20 left-0 bg-white/75 backdrop-blur-xl rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.2)] p-8 w-80 z-20"
-                    style="animation: floatCard 4s ease-in-out infinite;">
-
-                    <h3 class="font-bold text-xl text-slate-800">
-                        AI Assessment Result
-                    </h3>
-
-                    <div class="mt-6">
-
-                        <p class="text-slate-500">
-                            Possible Condition
-                        </p>
-
-                        <h4 class="text-blue-600 text-2xl font-bold">
-                            Viral Infection
-                        </h4>
-
-                    </div>
-
-                    <div class="mt-6">
-
-                        <p class="text-slate-500">
-                            Confidence Score
-                        </p>
-
-                        <div
-                            class="w-full bg-slate-200 h-3 rounded-full mt-3">
-
-                            <div
-                                class="bg-blue-600 h-3 rounded-full w-[87%]">
-                            </div>
-
-                        </div>
-
-                        <p class="font-bold mt-2">
-                            87%
-                        </p>
-
-                    </div>
-
-                    <div
-                        class="mt-5 inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium">
-
-                        Moderate Risk
-
                     </div>
 
                 </div>
@@ -443,9 +384,9 @@ Our intelligent engine evaluates symptoms and predicts possible conditions.
 
 <div class="bg-white rounded-3xl p-8 shadow-xl text-center hover:-translate-y-3 transition">
 
-<div class="w-20 h-20 bg-cyan-100 rounded-full flex items-center justify-center mx-auto">
+<div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
 
-<i class="fa-solid fa-heart-pulse text-3xl text-cyan-600"></i>
+<i class="fa-solid fa-heart-pulse text-3xl text-blue-600"></i>
 
 </div>
 
@@ -456,85 +397,6 @@ Get Guidance
 <p class="text-slate-600 mt-3">
 Receive risk assessments, recommendations, and nearby hospital suggestions.
 </p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- DEMO SECTION -->
-<section class="py-24">
-
-<div class="max-w-6xl mx-auto px-6">
-
-<div class="text-center mb-12">
-
-<h2 class="text-5xl font-extrabold">
-AI Assessment Preview
-</h2>
-
-<p class="text-slate-600 mt-4">
-See how SymptomAI transforms symptoms into actionable insights.
-</p>
-
-</div>
-
-<div class="bg-white rounded-[40px] shadow-2xl p-10">
-
-<div class="flex justify-between items-center mb-8">
-
-<h3 class="text-3xl font-bold">
-Assessment Result
-</h3>
-
-<span class="bg-red-100 text-red-600 px-4 py-2 rounded-full">
-High Risk
-</span>
-
-</div>
-
-<div class="space-y-6">
-
-<div>
-<p class="text-slate-500">
-Possible Condition
-</p>
-<h4 class="text-2xl font-bold text-blue-600">
-Viral Infection
-</h4>
-</div>
-
-<div>
-<p class="text-slate-500">
-Confidence Score
-</p>
-
-<div class="w-full bg-slate-200 rounded-full h-4 mt-2">
-
-<div class="bg-blue-600 h-4 rounded-full w-[87%]"></div>
-
-</div>
-
-<p class="mt-2 font-semibold">
-87% Confidence
-</p>
-
-</div>
-
-<div class="bg-blue-50 border border-blue-200 rounded-2xl p-6">
-
-<h4 class="font-bold text-blue-700">
-Recommendation
-</h4>
-
-<p class="mt-2 text-slate-700">
-Stay hydrated, monitor symptoms, and consult a healthcare professional if symptoms worsen.
-</p>
-
-</div>
 
 </div>
 
